@@ -1,3 +1,4 @@
+
 # PropAnalyze — Real Estate Property Analysis MVP
 
 A modern web application that analyzes investment properties: estimates value, recommends repairs, calculates ARV and profit, and generates a printable report.
@@ -6,7 +7,7 @@ A modern web application that analyzes investment properties: estimates value, r
 
 **Sample address:** `207 Midway Island, Clearwater, FL 33767`
 
----
+
 
 ## Tech Stack (Recommended)
 
@@ -20,11 +21,11 @@ A modern web application that analyzes investment properties: estimates value, r
 
 **Not included yet (add later):** Auth (Clerk/NextAuth), PDF export, background jobs, Redis cache.
 
----
+
 
 ## System Architecture
 
-```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                     Browser (React)                          │
 │  Dashboard (/)          Report Page (/report/[id])           │
@@ -51,7 +52,7 @@ A modern web application that analyzes investment properties: estimates value, r
 ┌──────────────────────────▼──────────────────────────────────┐
 │              Prisma + SQLite (PropertyAnalysis)              │
 └─────────────────────────────────────────────────────────────┘
-```
+
 
 ### Analysis Pipeline
 
@@ -62,7 +63,7 @@ A modern web application that analyzes investment properties: estimates value, r
 5. **Profit Calculator** — ARV = estimated value + ROI-weighted repair uplift; profit = ARV − value − repairs − holding costs
 6. Results saved to DB and displayed on report page
 
----
+
 
 ## Database Design
 
@@ -93,7 +94,7 @@ A modern web application that analyzes investment properties: estimates value, r
 
 Schema file: `prisma/schema.prisma`
 
----
+
 
 ## Development Plan
 
@@ -123,7 +124,7 @@ Schema file: `prisma/schema.prisma`
 - [ ] Caching layer for repeated addresses
 - [ ] ML-based ARV model trained on local comps
 
----
+
 
 ## How to Run Locally
 
@@ -191,11 +192,11 @@ npm run start      # Run production server (after build)
 npm run db:studio  # Open Prisma database GUI
 ```
 
----
+
 
 ## Project Structure
 
-```
+
 property-analyzer/
 ├── prisma/
 │   └── schema.prisma          # Database schema
@@ -217,7 +218,7 @@ property-analyzer/
 └── package.json
 ```
 
----
+
 
 ## Real vs. Simulated Data
 
@@ -229,8 +230,9 @@ property-analyzer/
 Provider code: `src/lib/analysis/providers/rentcast.ts`
 Mock fallback: `src/lib/analysis/mock-property-data.ts`
 
----
+
 
 ## License
 
 MIT — MVP prototype for demonstration purposes.
+
