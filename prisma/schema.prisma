@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model PropertyAnalysis {
+  id                String   @id @default(cuid())
+  address           String
+  normalizedAddress String
+  createdAt         DateTime @default(now())
+
+  bedrooms       Int
+  bathrooms      Float
+  squareFeet     Int
+  yearBuilt      Int
+  lotSizeSqFt    Int
+  propertyType   String
+  condition      String
+  lastSalePrice  Float?
+  lastSaleDate   String?
+  taxAssessed    Float?
+  dataSource     String   @default("Simulated data")
+  isLiveData     Boolean  @default(false)
+  county         String?
+
+  estimatedValue  Float
+  totalRepairCost Float
+  arv             Float
+  potentialProfit Float
+  profitMarginPct Float
+
+  repairs Json
+}
